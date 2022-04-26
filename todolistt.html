@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color: brown;height: 100vh;">
+        <div class="container pt-5">
+            <div class="row mt-5">
+                <div class="col-md-2 col-lg-2 col-sm-1"></div>
+                <div class="col-md-9 col-lg-7 col-sm-12 mx-5 pt-5 mt-5">
+                    <h2 class="headingg1 display-6 font-weight-light text-center bg-light py-2 " style="border-radius: 3px;">To do list</h2>
+
+                    <div class="form-row justify-content-center">
+                        <input type="text" name="list" id="list" placeholder="Add a new task &#8943; " class="form-control w-75 mr-3">
+                        <button class="btn btn-outline-light" onclick="myFunction()">ADD NEW TASK</button>
+                    </div>
+                    <br>
+
+                    <div class="headingg2 mb-2"></div>
+                    <div class="buttonn">
+                        <button class="btn btn-light" onclick="myFunction2()">Clear all</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction(additem) {
+            additem = document.querySelector("#list").value;
+            // var btn = document.querySelector(".btn");
+
+            if (additem.length == 0) {
+                alert("Please Enter A Task !!");
+
+            } else {
+                var item = document.querySelector(".headingg2").innerHTML += `<div class="text"><h6 class="display-5 bg-light headingg2 px-2 py-2" style="font-weight: 400; font-size: 1.1rem; border-radius: 3px;">${additem} <i class="fa-solid fa-trash float-end"  style="background-color: white;float: right"></i>
+                    </h6></div>`;
+
+                var trash = document.querySelectorAll(".fa-solid");
+                for (var i = 0; i < trash.length; i++) {
+                    trash[i].onclick = function() {
+
+                        this.parentNode.remove();
+                    }
+                }
+            }
+        }
+
+        function myFunction2(headingg) {
+            headingg = document.querySelector(".headingg2");
+            headingg.remove();
+
+        }
+    </script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</body>
+
+</html>

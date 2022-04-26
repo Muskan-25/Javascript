@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container-fluid pt-5" style="background-color: rgb(255, 182, 156);height: 100vh;">
+        <div class="container pt-5">
+            <div class="row pt-5 mt-5">
+                <div class="col-lg-1"></div>
+                <div class="col-md-8 col-lg-9 col-sm-12 bg-light pt-5 px-5 mx-4 ">
+                    <h3 class="headingg1 font-weight-light pt-3 pb-2 text-center">Please enter the temperature you would like to convert</h3><br>
+                    <form action="" post="">
+                        <div class="form-inline justify-content-center">
+                            <input type="number" name="num" id="num" class="form-control w-25 mr-2"><br>
+                            <select name="" id="" class="temp form-control w-25" onchange="myFunction(this)">
+                                <option value="select" >Choose Any One : </option>
+                                <option value="fahrenheit">FAHRENHEIT</option>
+                                <option value="celsius">CELSIUS</option>
+                            </select>
+                        </div>
+                        <br>
+                        <h5 class="headingg2 font-weight-normal pt-3 pb-2 text-center"></h5><br>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction(number, temp) {
+            var number = document.querySelector("#num").value;
+            var temp = document.querySelector(".temp");
+            var result = document.querySelector(".headingg2");
+            var res;
+            if (temp.value == "fahrenheit") {
+                res = (number - 32) * 5 / 9;
+            } else if (temp.value == "celsius") {
+                res = number * 9 / 5 + 32;
+            } else {
+                res = "Wrong Input !!! Try again";
+            }
+            result.innerHTML = res;
+        }
+    </script>
+
+
+</body>
+
+</html>
