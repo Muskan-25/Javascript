@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        .heading1 {
+            font-family: cursive;
+        }
+        
+        .para1 {
+            font-family: cursive;
+            font-size: 1.5rem;
+            writing-mode: vertical-rl;
+            margin: auto;
+            color: rgb(240, 225, 201);
+            letter-spacing: 0.12em;
+        }
+        
+        .para2,
+        .para3 {
+            font-family: cursive;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .para4 {
+            font-family: cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .para5 {
+            font-family: cursive;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+        
+        .players {
+            background-color: black;
+        }
+        
+        .playerss {
+            background-image: radial-gradient( rgba(255, 255, 255, 0.662) 25%, rgb(240, 225, 201) 75%);
+        }
+        
+        hr {
+            border-top: 1px solid #ffff;
+        }
+        
+        .btn {
+            text-align: center;
+            padding: 5px 20px 5px 20px;
+            font-size: 1.5rem;
+            font-family: cursive;
+            transition: background-color 0.3 ease-in-out;
+        }
+        
+        .btn:hover {
+            background-color: black;
+            color: rgb(240, 225, 201);
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            transform: scale(0);
+            transition-property: transfrom;
+            transform-origin: 0 50%;
+            transition: background-color 2s ease-in-out;
+        }
+        
+        .ninja {
+            font-size: 4rem;
+            transform: scale3d(2);
+        }
+        
+        .btn:hover::after {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            transform: scaleX(0);
+        }
+        
+        .player1 {
+            justify-content: space-between;
+        }
+        
+        #imgg1,
+        #imgg2 {
+            width: 30%;
+        }
+        
+        #bullet {
+            position: absolute;
+            top: 83px;
+            left: 238px;
+            transform: rotate(90deg);
+            font-size: 1.2rem;
+        }
+        
+        #bullet1 {
+            position: absolute;
+            top: 83px;
+            right: 238px;
+            transform: rotate(270deg);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section class=" pt-5 pb-4" style="background-color: rgb(255, 231, 211)">
+        <div class="container-fluid px-0">
+            <div class="row pt-3 pb-2 mx-0">
+                <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12">
+                    <div class="headerr">
+                        <div class="text1 align-content-center">
+                            <h1 class="heading1 text-center mb-0"><i class="fa-solid fa-gun px-3"></i>Shooting Game<i class="fa-solid fa-gun px-3" style="transform:scaleX(-1);"></i></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container px-4 pt-2">
+                <div class="row mt-5 mb-3 mx-0 playerss">
+                    <div class="col-md-1 col-lg-1 col-xl-1 col-sm-1 players py-4 mr-0">
+                        <div class="headerr my-5">
+                            <div class="text2 align-content-center ms-auto">
+                                <p class="para1 text-center" style="transform: rotate(180deg);">PLAYER ONE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-lg-10 col-xl-9.5 col-sm-10 py-5 mr-0 my-auto">
+                        <div class="player1 my-auto d-flex flex-row">
+                            <img src="gun-png-transparent-gun-images-pluspng-6.png" alt="" id="imgg1" style="transform: scaleX(-1);"><span id="bullet">🔥</span>
+                            <span id="bullet1">🔥</span><img src="gun-png-transparent-gun-images-pluspng-6.png" alt="" id="imgg2">
+                        </div>
+                        <div class="player1 my-auto d-flex flex-row">
+                            <p class="para2 text-center pl-5"></p>
+                            <p class="para3 text-center pr-5"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-lg-1 col-xl-1 col-sm-1 players py-4 mr-0">
+                        <div class="headerr my-5">
+                            <div class="text2 align-content-center ms-auto">
+                                <p class="para1 text-center">PLAYER TWO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="para4 text-center"></p>
+                <div class="row py-0 align-content-center justify-content-center pb-4">
+                    <button class="btn btn-toolbar text-center mr-1 shoot" onclick="function1(this)">Shoot</button>
+                    <button class="btn btn-toolbar text-center mr-1 reset" onclick="function2(this)" type="reset">Reset</button>
+                </div>
+                <div class="player1 my-auto d-flex flex-row" style="justify-content:space-around ">
+                    <p class="para5 text-center pl-5">Player 1</p>
+                    <p class="para5 text-center pr-5">Player 2</p>
+                </div>
+                <div class="player1 my-auto d-flex flex-row" style="justify-content:space-around ">
+                    <p class="score1 para5 text-center pl-5" id="score1"></p>
+                    <p class="score2 para5 text-center pr-5 " id="score2"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    </script>
+
+
+    <script>
+        var player1Health = 100;
+        var player2Health = 100;
+
+        let roundCounter = 0;
+        var id = null;
+        var id1 = null;
+
+        var shootbtn = document.querySelector(".shoot");
+
+        let lastname;
+        console.log(localStorage.getItem("lastname"));
+
+        let player1Score = 0;
+        let player2Score = 0;
+
+        function function1() {
+
+            var elem = document.getElementById("bullet");
+            var pos = 0;
+            clearInterval(id);
+            id = setInterval(frame1, 5);
+
+            function frame1() {
+                if (pos == 420) {
+                    clearInterval(id);
+                } else {
+                    pos = pos + 5;
+                    elem.style.top = 1000;
+                    elem.style.left = 238 + pos + 'px';
+                    // elem.style.right = 70;
+                }
+            }
+            var elem1 = document.getElementById("bullet1");
+            var pos1 = 0;
+            clearInterval(id1);
+            id1 = setInterval(frame, 5);
+
+            function frame() {
+                if (pos1 == 420) {
+                    clearInterval(id);
+                } else {
+                    pos1 = pos1 + 5;
+                    elem1.style.top = 1000;
+                    elem1.style.right = 238 + pos1 + 'px';
+                    // elem.style.right = 70;
+                }
+            }
+
+
+            //Random Power for both players. 
+
+            let randnum1 = document.querySelector(".para2");
+            let randnum2 = document.querySelector(".para3");
+
+            let bullet1 = Math.floor(Math.random() * 5);
+            let bullet2 = Math.floor(Math.random() * 5);
+
+            randnum1.innerHTML = bullet1;
+            randnum2.innerHTML = bullet2;
+            // let player1 = document.getElementById("score1");
+            // let player2 = document.getElementById("score2");
+
+
+            //Calculating Players Health after hitting by power
+            player1Health = player1Health - bullet2;
+            player2Health = player2Health - bullet1;
+
+            console.log("Player 1 Health : " + player1Health);
+            console.log("Player 2 Health : " + player2Health)
+
+            roundCounter++;
+
+            if (player1Health == 0) {
+                document.querySelector(".para4").innerHTML = "Player 2 Won!";
+
+            }
+            if (player2Health == 0) {
+                document.querySelector(".para4").innerHTML = "Player 1 Won!";
+
+            }
+
+
+
+            if (roundCounter == 5) {
+                shootbtn.disabled = true;
+                shootbtn.innerHTML = "Game Over";
+            }
+
+
+
+            if (bullet1 > bullet2) {
+                player1Score = player1Score + 1;
+
+            }
+
+            if (bullet2 > bullet1) {
+                player2Score = player2Score + 1;
+
+            }
+            localStorage.setItem("lastname", player1Score);
+            document.getElementById("score1").innerHTML = player1Score;
+            document.getElementById("score2").innerHTML = player2Score;
+
+
+            if (player1Score == 3) {
+                document.querySelector(".para4").innerHTML = "Player 1 Won!";
+
+            }
+
+            if (player2Score == 3) {
+                document.querySelector(".para4").innerHTML = "Player 2 Won!";
+
+            }
+            if (roundCounter == 5) {
+                if (player1Score > player2Score) {
+
+                    document.querySelector(".para4").innerHTML = "Player 1 Won!";
+
+                }
+                if (player2Score > player1Score) {
+                    document.querySelector(".para4").innerHTML = "Player 2 Won!";
+
+                }
+                if (player2Score == player1Score) {
+                    document.querySelector(".para4").innerHTML = "Match Draw";
+
+                }
+            }
+        }
+
+        function function2() {
+            location.reload();
+            localStorage.clear();
+
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</body>
+
+</html>
