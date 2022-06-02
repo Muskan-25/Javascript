@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food</title>
+
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="meals.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="checkout.css"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="bootstrap.css"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/82842b77dc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Move to top icon */
+        
+        .input--group-button--beat {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            z-index: 99;
+            border: none;
+            color: black;
+            width: 56px;
+            height: 56px;
+            -webkit-transform-origin: 65px 50px;
+            transform-origin: 65px 50px;
+            -webkit-animation: beat 1s ease-in-out infinite alternate;
+            animation: beat 1s ease-in-out infinite alternate;
+            opacity: .18;
+            border-radius: 50%;
+            background: #ff5309;
+        }
+        
+        @keyframes beat {
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes beat2 {
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        .fas.fa-angle-up {
+            /* display: none; */
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 60px;
+            right: 60px;
+            opacity: 1;
+            color: red;
+            background-color: transparent;
+            border: none;
+            border-radius: 50%;
+            font-size: 28pt;
+        }
+        /* Move to top icon */
+        
+        #img2 {
+            width: 213px;
+            height: 213px;
+            background: url('https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat #FFF;
+            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            position: absolute;
+            opacity: 0;
+            border: 4px solid whitesmoke;
+            z-index: 99;
+            border-radius: 100%;
+            display: block;
+            transition: opacity .2s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+
+        <!-- top nav -->
+
+        <div class="navbar navbar-expand-xxl bg-dark navbar-dark container">
+            <a class="navbar-brand" href="index.html"> <img src="images/logo.png" alt="FoodHub" style="width: 40%; height: 40%; float: left; margin-left: 7%;"></a>
+
+            <div class="navbar navbar-expand-xxl bg-dark navbar-light justify-content-end ">
+
+                <!-- sigin and sign up -->
+                <div class="nav-icon d-flex">
+                    <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+                        <i class="far fa-user  "></i>
+                    </a>
+
+                    <!-- sigin and sign up -->
+                    <!-- shopping cart -->
+                    <div class="cart-mainf">
+                        <div class="hubcart hubcart2 cart cart box_1">
+                            <form action="cart.html" method="post">
+                                <input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="display" value="1">
+                                <button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart" style="float: right;">
+                                    <i class="fa" style="float: right;">&#xf07a;<span style="font-size: 15pt; color: rgb(241, 185, 223); border-radius: 15px;">0</span></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- //shopping cart ends here -->
+                <button class="navbar-toggler pulsate" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" style="text-align: center;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: white ;">
+                            <h4>Home</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meals.html" style="color: white; font-style: bold;">
+                            <h4>Menu </h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-style: bold;">
+                            <h4>About Us </h4>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white; font-style: bold;">
+                            <h4>Contact Us</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+    <!-- breadcrumbs -->
+    <div class="container px-0">
+        <nav class="pageinfo" aria-label="breadcrumb">
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Fast-Food</li>
+            </ol>
+        </nav>
+    </div>
+
+
+
+    <!-- //breadcrumbs -->
+    <!--..................Gallery section....................-->
+    <div class="innerf-pages section">
+        <div class="container">
+            <!-- grid right -->
+            <div class="py-sm-5 py-3 right-product-grid">
+                <!-- ..............card group 1...............-->
+                <h5 class="shop_w3 text-capitalize">
+                    Fast Food</h5>
+                <div class="card-group my-sm-5 mt-5">
+                    <!-- row2 -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item" id="img-zoomer-box">
+                                <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top" id="img1">
+                                <div id="img2"></div>
+                                <div class="inner-men-cart-pro">
+                                    <a href="#cartmodal" data-toggle="modal" data-target="#cartmodal" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">French Fries</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 199/-</p>
+                                    <p class="line-through">Rs 199/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <!-- <form action="#" method="post"> -->
+                                <!-- <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="hub_item" value="Full Length Party Dress">
+                                    <input type="hidden" name="amount" value="20.00"> -->
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                                <!-- <a href="#" data-toggle="modal" data-target="#myModal1"></a> -->
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Soupy Noodles</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 279/-</p>
+                                    <p class="line-through">Rs 279/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <!-- <form action="#" method="post">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="hub_item" value="Midi/Knee Length Party Dress">
+                                    <input type="hidden" name="amount" value="18.00"> -->
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                                <!-- <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                </form> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Veg Momos</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 149/-</p>
+                                    <p class="line-through">Rs 149/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1460872/pexels-photo-1460872.jpeg?auto=compress&cs=tinysrgb&w=600" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Red Sauce Pasta</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 349/-</p>
+                                    <p class="line-through">Rs 349/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                </div>
+                <!--.........//card group 1.............-->
+                <!-- Card Group 2.........................-->
+                <div class="card-group my-sm-5 mt-5">
+                    <!-- row2 -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Chowmein</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 199/-</p>
+                                    <p class="line-through">Rs 199/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://media.istockphoto.com/photos/south-indian-dish-uthappams-picture-id474271867?k=20&m=474271867&s=612x612&w=0&h=TonjQhXBe3zAWi7G1ynvT2LbMfSkACNo-XYMAGqwBoE=" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Uttapam</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 279/-</p>
+                                    <p class="line-through">Rs 279/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/2741457/pexels-photo-2741457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+                            </div>
+
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Chesse Pizza</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 449/-</p>
+                                    <p class="line-through">Rs 449/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/718739/pexels-photo-718739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Pan Cake</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 249/-</p>
+                                    <p class="line-through">Rs 249/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                </div>
+                <!--.............//Card Group 2..................-->
+
+                <!--.............card group 3...................-->
+                <div class="card-group my-sm-5 mt-5">
+                    <!-- row2 -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://media.istockphoto.com/photos/uttapam-picture-id1319725630?b=1&k=20&m=1319725630&s=612x612&w=0&h=BKTvNbpNq9TvueUP5giB8Tmbjqipe0LpeEOoyZXMBiY=" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Idli Sambhar</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 299/-</p>
+                                    <p class="line-through">Rs 299/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1860199/pexels-photo-1860199.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Fried Momos</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 279/-</p>
+                                    <p class="line-through">Rs 279/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">Special Burger</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 299/-</p>
+                                    <p class="line-through">Rs 299/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                    <!-- card -->
+                    <div class="col-lg-3 col-sm-6  mt-lg-0 mt-5">
+                        <div class="card product-men p-3">
+                            <div class="men-thumb-item">
+                                <img src="https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="card-img-top">
+
+                                <div class="inner-men-cart-pro">
+                                    <a href="Cheese.html" class="link-product-add-cart">Order Now</a>
+                                </div>
+
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body  py-3 px-2">
+                                <h5 class="card-title text-capitalize">White Sauce Pasta</h5>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p class="text-dark font-weight-bold">Rs 349/-</p>
+                                    <p class="line-through">Rs 349/-</p>
+                                </div>
+                            </div>
+                            <!-- card footer -->
+                            <div class="card-footer d-flex justify-content-end">
+                                <button type="submit" class="hub-cart phub-cart btn">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //card -->
+                </div>
+                <!--.............//Card Group 3....................-->
+
+            </div>
+        </div>
+    </div>
+
+    <!--Move To Top Page-->
+    <button onclick="topFunction()" id="myBtn" class="fas fa-angle-up float-right input--group-button--beat" type="submit">
+        <div class="input--group-button--beat"></div>
+    </button>
+    <!--// Move To Top Page-->
+
+
+    <!---footer========-->
+    <footer class="footer container px-0">
+
+        <div class="section-center">
+            <p class="text">
+                &copy; <span>Food For Health</span>
+            </p>
+        </div>
+
+    </footer>
+
+    <!---End of Footer Section===========-->
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="addtocart.js"></script>
+    <!-- script for password match -->
+
+    <script>
+        mybutton = document.getElementById("myBtn");
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // var imgss = document.querySelector("#card-img").onmouseover = myfunction;
+
+        // function myfunction() {
+        //     //console.log(imgss.offsetX);
+        //     imgss.style.height = "300px";
+        //     imgss.style.width = "300px";
+        // }
+    </script>
+</body>
+
+</html>
