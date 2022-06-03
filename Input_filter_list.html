@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input filter List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style>
+        .searchfield {
+            font-family: Helvetica, 'FontAwesome', sans-serif;
+            margin-bottom: 5% !important;
+        }
+        
+        .form-control:focus {
+            border: 0;
+            box-shadow: none;
+        }
+        
+        .list li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding-bottom: 1%;
+            padding-left: 1.5%;
+            color: #f5f1f1;
+            border-bottom: 1px solid #f7f6f641;
+        }
+        
+        .list {
+            margin: 0 25.5%;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="background-color: rgb(133, 0, 142);">
+        <div class="container d-flex justify-content-center flex-column" style="height:100vh ;">
+            <input type="text" class="form-control w-50 mx-auto searchfield" placeholder="&#xf002  Search..." oninput="myfunction()">
+
+            <ul class="list">
+                <li>London</li>
+                <li>Manchester</li>
+                <li>Birmingham</li>
+                <li>Sheffield</li>
+                <li>Bristol </li>
+                <li>Edinburgh</li>
+                <li>Cardiff</li>
+                <li class="border-0">Bradford</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script>
+        function myfunction() {
+            let searchfield = document.querySelector(".searchfield");
+            filter = searchfield.value.toLowerCase();
+            let listitem = document.querySelectorAll(".list li");
+            listitem.forEach((item) => {
+                let text = item.textContent;
+                if (text.toLowerCase().includes(filter.toLowerCase())) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
