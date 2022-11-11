@@ -1,0 +1,26 @@
+* {
+    margin: auto;
+    text-align: center;
+    padding: 0;
+    white-space: no-wrap;
+}
+
+body {
+    height: 100vh;
+}
+
+.text1 a {
+    font-size: 4rem;
+    color: rgb(15, 205, 179);
+    text-decoration: none;
+}
+
+.text2,
+#text2 {
+    font-size: 2rem;
+    color: aliceblue;
+}
+
+img {
+    width: inherit;
+}
