@@ -26,6 +26,10 @@ button:hover {
     box-shadow: 0 0 20px 0px #595757;
 }
 
+.hoverr{
+    box-shadow: 0 0 20px 0px #595757;
+}
+
 .col-auto {
     /* box-shadow: 0 0 20px 0px #000000a3; */
     border-radius: 5px;
