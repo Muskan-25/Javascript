@@ -8,6 +8,7 @@ for (var i = 0; i < drum.length; i++) {
 
 document.addEventListener("keypress", function(event) {
     makesound(event.key);
+    hovereffect(event.key);
 });
 
 function makesound(key) {
@@ -32,5 +33,15 @@ function makesound(key) {
     } else if (key === "l" || key === "L") {
         var audio = new Audio("sounds/crash.mp3");
         audio.play();
+    } else {
+        alert("Press a Valid Key.")
     }
+}
+
+function hovereffect(currentbtn) {
+    var btn = document.querySelector("." + currentbtn.toUpperCase());
+    btn.classList.add("hoverr");
+    setTimeout(function() {
+        btn.classList.remove("hoverr");
+    }, 200)
 }
