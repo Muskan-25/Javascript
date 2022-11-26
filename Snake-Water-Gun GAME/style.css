@@ -1,0 +1,63 @@
+* {
+    margin: auto !important;
+    text-align: center;
+}
+
+body {
+    height: 100vh;
+    background-color: beige;
+}
+
+button {
+    width: 12rem;
+    height: 12rem;
+    background-color: transparent;
+    border: none;
+    padding-top: 10rem;
+    font-weight: 800;
+}
+
+button:hover {
+    box-shadow: 0px 0px 8px 0px #7e7979;
+}
+
+:focus-visible {
+    outline: none !important;
+}
+
+.snakebtn {
+    background: url('https://media.istockphoto.com/id/1443256866/photo/origami-green-snake-diy-paper-crafts-white-background.jpg?b=1&s=170667a&w=0&k=20&c=y2RCGKigqCze1s5lt26uh8XLkR8GbMQRnWuzCDvD1X0=');
+    background-position: center;
+    background-size: cover;
+}
+
+.waterbtn {
+    background: url('https://images.unsplash.com/photo-1488188840666-e2308741a62f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2F0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+    background-position: center;
+    background-size: cover;
+}
+
+.gunbtn {
+    background: url('https://images.pexels.com/photos/3926743/pexels-photo-3926743.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-size: cover;
+}
+
+.text1 {
+    margin-bottom: 40px !important;
+}
+
+::selection {
+    background-color: transparent;
+    color: brown;
+}
+
+.para {
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+
+.result {
+    font-weight: 700;
+    font-size: 1.7rem;
+}
