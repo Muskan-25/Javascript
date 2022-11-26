@@ -9,12 +9,13 @@ body {
 }
 
 button {
-    width: 12rem;
-    height: 12rem;
+    width: auto;
+    height: auto;
     background-color: transparent;
     border: none;
-    padding-top: 10rem;
+    padding: 10rem 5rem 0;
     font-weight: 800;
+    white-space: nowrap;
 }
 
 button:hover {
@@ -60,4 +61,12 @@ button:hover {
 .result {
     font-weight: 700;
     font-size: 1.7rem;
+}
+
+@media screen and (max-width: 750px) {
+    button {
+        padding: 8rem 3rem 0;
+        font-weight: 800;
+        white-space: nowrap;
+    }
 }
