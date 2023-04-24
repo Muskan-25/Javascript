@@ -11,12 +11,14 @@
     <style>
         .row>* {
                 justify-content: center;
-                margin: 0px 12px 12px !important;
+                margin: 0px 0px 12px !important;
                 display: flex;
                 max-width: 100%;
                 padding-right: calc(var(--bs-gutter-x) * .5);
                 padding-left: calc(var(--bs-gutter-x) * .5);
              }
+        .row{
+            flex-wrap: wrap;
     </style>
 </head>
 
@@ -27,13 +29,13 @@
             <h2 class="text1">Snake Water & Gun GAME</h2>
         </div>
         <div class="row" style="justify-content: center;">
-            <div class="col-4 ">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <button class="snakebtn" title="Click Me">Snake</button>
             </div>
-            <div class="col-4 ">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <button class="waterbtn" title="Click Me">Water</button>
             </div>
-            <div class="col-4 ">
+            <div class="col-lg-4 col-md-4 col-sm-6">
                 <button class="gunbtn" title="Click Me">Gun</button>
             </div>
         </div>
